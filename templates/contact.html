@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Phone</label>
+    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Message</label>
+    <input type="text" name="msg" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% comment %} <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in data %}
+        <tr>
+            <th scope="row">{{d.name}}</th>
+            <td>{{d.email}}</td>
+            <td>{{d.phone}}</td>
+            <td>{{d.msg}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>             {% endcomment %}
+
+                        
+
+{% endblock content %}
